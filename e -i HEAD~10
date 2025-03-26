@@ -1,0 +1,137 @@
+[33mcommit 76eea7a3dbc5777113dd7af667e7f7a6933272f7[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Thu Oct 31 22:26:45 2024 +0700
+
+    feat(dashboard admin): add name admin in dahboard
+
+[33mcommit 2609ee0f1ff8100caebfcc6b24b67b5bba5dd010[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Thu Oct 31 19:56:40 2024 +0700
+
+    refactor(detail): add detail user
+
+[33mcommit f5b11f14b684b2aea615353433c5a5df2b84e9a9[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Thu Oct 31 19:43:29 2024 +0700
+
+    feat(detail): add detail user
+
+[33mcommit ffcfc6b039ff84b3f30b107979db54c1fb51f931[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Thu Oct 31 15:57:09 2024 +0700
+
+    feat(search): add layout and logic searching in dashboard admin
+
+[33mcommit 59022a3833100abfd1a3599bdd0c383eff4247c5[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Thu Oct 31 14:57:56 2024 +0700
+
+    refactor(admin dashboard): using logic to show list user from database
+
+[33mcommit 59ad4940af613e0c4d87312d5f72dd0316dc7aff[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Tue Oct 15 10:32:32 2024 +0700
+
+    refactor(reset-password): added logic for reset password user
+
+[33mcommit 38cd7089fdd52eb6928bfdfde7ab9c387b6192de[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Sun Oct 13 08:11:34 2024 +0700
+
+    feat(dashboard): add logic destroy to riwayat gula
+
+[33mcommit b958001a7103146392da5e4c493c9e55a95e8818[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Sun Oct 13 08:05:29 2024 +0700
+
+    feat(dashboard): add a user glucose graph along with logic to handle it
+
+[33mcommit bd38414fc1b0a4799ccc7b747ea2ea6744b99de9[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Sun Oct 13 07:00:57 2024 +0700
+
+    feat(profile): add logic for the profile and password update process
+
+[33mcommit d2c796d44e79f64441d9c88ff35d741161f2c649[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Sat Oct 12 20:42:56 2024 +0700
+
+    feat(catatan kesehatane): add function delete
+
+[33mcommit a652d60af7fcae40747a747b5f1e0b4716c8c255[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Sat Oct 12 13:37:39 2024 +0700
+
+    style(code): clean code
+
+[33mcommit ff90027556c258c3f40d5801d5e2ae735ab15a89[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Sat Oct 12 12:40:44 2024 +0700
+
+    feat(catatan kesehatan) : add logic for calculat kkal lost
+
+[33mcommit 68a4450c42e58594f47eca3590ff4526f81fe6b4[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Sat Oct 12 10:29:30 2024 +0700
+
+    feat(): add logic data for information nutrient
+
+[33mcommit 447e9025e97892fe1a5965a9ae6688ea13eb3265[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Sat Oct 12 07:56:40 2024 +0700
+
+    feat(kayout): add layout for list doctor
+
+[33mcommit 7fad32438885173373ef156de32347d05a5d1bcb[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Fri Oct 11 22:49:05 2024 +0700
+
+    feat(layout): enter logic into the Catatan Kesehatan view
+
+[33mcommit 2206716982a1664214504cc64d4a1b905b0d2b25[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Fri Oct 11 09:32:59 2024 +0700
+
+    feat(): fix the display with additional logic in it
+
+[33mcommit e166f06d4276337c982c3ff64d99374c65239855[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Thu Oct 10 18:23:14 2024 +0700
+
+    feat(auth): fix auth and logic in user roles
+
+[33mcommit 26c8ac3efcd238f294eb40c492e56b3f8ce8c105[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Thu Oct 10 11:13:20 2024 +0700
+
+    feat(roleManager): make a difference in the appearance of each role
+
+[33mcommit c8c7d757f6ea8b3fba1ea229e5a00ae0a1ad3eed[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Thu Oct 10 10:24:57 2024 +0700
+
+    feat(signin): integration fe & be
+
+[33mcommit fcf31666c97b0a5e808ecdee0aee1f1d78dcd17d[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Tue Oct 8 23:59:51 2024 +0700
+
+    feat(middleware): Adding logic for admin and user logins
+
+[33mcommit 2be5eab0dbee1ff3cbfc870e981e7e1010bbf898[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Tue Oct 8 10:19:57 2024 +0700
+
+    feat(auth): Add authentication using breeze
+
+[33mcommit 27333f5f0c32f5656960b85a2e6f880adac21266[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Tue Oct 8 09:36:16 2024 +0700
+
+    refactor(README.md) : "Adding a commit guide"
+
+[33mcommit be28363d8eb71ef17d02e701d8d1ef974fa74f92[m
+Author: Akmal Sidik <143138356+WP2-AkmalSidik@users.noreply.github.com>
+Date:   Tue Oct 8 09:31:56 2024 +0700
+
+    Create Project
