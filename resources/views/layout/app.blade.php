@@ -35,6 +35,8 @@
     @vite('resources/css/app.css')
     {{-- @livewireStyles --}}
 
+    @livewireStyles
+
 </head>
 
 <body class="w-[100wh] h-screen bg-slate-200 sm:w-full flex justify-center items-center">
@@ -60,6 +62,9 @@
     </script>
 
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+    @livewireScripts
+
 </body>
 
 </html>

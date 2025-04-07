@@ -184,24 +184,40 @@
             @method('PUT')
             <input type="hidden" name="id" id="editId">
 
+            <label class="text-xs">Nama Obat</label>
             <input type="text" name="nama_obat" id="editNamaObat"
-                class="mt-1 px-3 py-3 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#0BB4A6] focus:ring-[#0BB4A6] block w-full rounded-md sm:text-sm focus:ring-1"
+                class="px-3 py-3 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#0BB4A6] focus:ring-[#0BB4A6] block w-full rounded-md sm:text-sm focus:ring-1"
                 placeholder="Nama Obat" required/>
 
-            <input type="number" name="stok" id="editStok"
-                class="mt-1 px-3 py-3 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#0BB4A6] focus:ring-[#0BB4A6] block w-full rounded-md sm:text-sm focus:ring-1"
+            <label class="text-xs">Tambah Stok</label>
+            <input type="number" name="stok_input" id="addStok"
+                class="px-3 py-3 bg-white border shadow-sm border-slate-300 block w-full rounded-md sm:text-sm"
+                placeholder="Tambah Stok"/>
+
+            <label class="text-xs">Stok Obat</label>
+            <input type="number" name="stok" id="editStok" readonly
+                class="px-3 py-3 bg-gray-100 border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#0BB4A6] focus:ring-[#0BB4A6] block w-full rounded-md sm:text-sm focus:ring-1"
                 placeholder="Stok" required/>
 
+            <script>
+                document.getElementById("addStok").addEventListener("input", function() {
+                    let stokValue = parseInt(this.value) || 0;
+                    document.getElementById("editStok").value = stokValue + 10; // Sesuaikan angka ini jika perlu
+                });
+            </script>
+
+            <label class="text-xs">Kategori Obat</label>
             <select name="jenis_obat" id="editJenisObat"
-                class="mt-1 px-3 py-3 bg-white border shadow-sm border-slate-300 focus:outline-none focus:border-[#0BB4A6] focus:ring-[#0BB4A6] block w-full rounded-md sm:text-sm focus:ring-1" required>
+                class="px-3 py-3 bg-white border shadow-sm border-slate-300 focus:outline-none focus:border-[#0BB4A6] focus:ring-[#0BB4A6] block w-full rounded-md sm:text-sm focus:ring-1" required>
                 <!-- <option>Select Kategori</option> -->
                 <option value="kapsul">Kapsul</option>
                 <option value="tablet">Tablet</option>
                 <option value="sirup">Sirup</option>
             </select>
 
+            <label class="text-xs">Takaran mg/ml</label>
             <input type="number" name="takaran" id="editTakaran"
-                class="mt-1 px-3 py-3 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#0BB4A6] focus:ring-[#0BB4A6] block w-full rounded-md sm:text-sm focus:ring-1"
+                class="px-3 py-3 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#0BB4A6] focus:ring-[#0BB4A6] block w-full rounded-md sm:text-sm focus:ring-1"
                 placeholder="Takaran mg/ml"/>
 
             <!-- Tombol Submit dan Batal -->

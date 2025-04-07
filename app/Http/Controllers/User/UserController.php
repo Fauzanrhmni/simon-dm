@@ -51,7 +51,10 @@ class UserController extends Controller
             $statusDiabetes = 'Diabetes';
         }
 
-        return view('user.profile', [
+        // Menyesuaikan tampilan berdasarkan role user
+        $view = $user->hasRole('admin') ? 'admin.profile' : 'user.profile';
+
+        return view($view, [
             'user' => $user,
             'umur' => $umur,
             'statusDiabetes' => $statusDiabetes,

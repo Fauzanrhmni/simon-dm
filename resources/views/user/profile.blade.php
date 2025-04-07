@@ -12,7 +12,7 @@
             </svg>                              
         </a>
         <div class="flex flex-col">
-            <h1 class="text-base text-center font-bold text-black ml-2">Riwayat Pemeriksaan</h1>
+            <h1 class="text-base text-center font-bold text-black ml-2">My Profile</h1>
         </div>
         <form method="POST" action="{{ route('logout') }}" onsubmit="resetPopupOnLogout()">
             @csrf
@@ -37,39 +37,52 @@
           </a>
       </div>
       <div class="flex flex-col gap-2 items-center rounded-xl">
-          <a href="{{route('riwayat')}}"
-              class="py-2 flex flex-col justify-center items-center gap-2">
-              <svg width="33" height="35" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M30.25 17V3.875C30.25 3.17881 29.9998 2.51113 29.5544 2.01884C29.109 1.52656 28.5049 1.25 27.875 1.25H4.125C3.49511 1.25 2.89102 1.52656 2.44562 2.01884C2.00022 2.51113 1.75 3.17881 1.75 3.875V30.125C1.75 30.8212 2.00022 31.4889 2.44562 31.9812C2.89102 32.4734 3.49511 32.75 4.125 32.75H16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M22.3333 29.25C24.9566 29.25 27.0833 26.8995 27.0833 24C27.0833 21.1005 24.9566 18.75 22.3333 18.75C19.7099 18.75 17.5833 21.1005 17.5833 24C17.5833 26.8995 19.7099 29.25 22.3333 29.25Z" stroke="black" stroke-width="2"/>
-                  <path d="M26.2916 27.5L30.2499 31M8.08325 10H23.9166M8.08325 17H14.4166" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  
+        @if(auth()->user()->role == '1') 
+            <a href="{{route('admin.users')}}"
+                class="py-2 flex flex-col justify-center items-center gap-2">
+                <svg width="33" height="35" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30.25 17V3.875C30.25 3.17881 29.9998 2.51113 29.5544 2.01884C29.109 1.52656 28.5049 1.25 27.875 1.25H4.125C3.49511 1.25 2.89102 1.52656 2.44562 2.01884C2.00022 2.51113 1.75 3.17881 1.75 3.875V30.125C1.75 30.8212 2.00022 31.4889 2.44562 31.9812C2.89102 32.4734 3.49511 32.75 4.125 32.75H16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22.3333 29.25C24.9566 29.25 27.0833 26.8995 27.0833 24C27.0833 21.1005 24.9566 18.75 22.3333 18.75C19.7099 18.75 17.5833 21.1005 17.5833 24C17.5833 26.8995 19.7099 29.25 22.3333 29.25Z" stroke="black" stroke-width="2"/>
+                    <path d="M26.2916 27.5L30.2499 31M8.08325 10H23.9166M8.08325 17H14.4166" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    
+                <p class="text-[0.8rem] text-center">Data<br>Verifikasi</p>
+            </a>
+
+        @else
+            <a href="{{ route('riwayat') }}"
+                class="py-2 flex flex-col justify-center items-center gap-2">
+                    <svg width="33" height="35" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M30.25 17V3.875C30.25 3.17881 29.9998 2.51113 29.5544 2.01884C29.109 1.52656 28.5049 1.25 27.875 1.25H4.125C3.49511 1.25 2.89102 1.52656 2.44562 2.01884C2.00022 2.51113 1.75 3.17881 1.75 3.875V30.125C1.75 30.8212 2.00022 31.4889 2.44562 31.9812C2.89102 32.4734 3.49511 32.75 4.125 32.75H16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M22.3333 29.25C24.9566 29.25 27.0833 26.8995 27.0833 24C27.0833 21.1005 24.9566 18.75 22.3333 18.75C19.7099 18.75 17.5833 21.1005 17.5833 24C17.5833 26.8995 19.7099 29.25 22.3333 29.25Z" stroke="black" stroke-width="2"/>
+                      <path d="M26.2916 27.5L30.2499 31M8.08325 10H23.9166M8.08325 17H14.4166" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
               <p class="text-[0.8rem] text-center">Riwayat Pemeriksaan</p>
-          </a>
+            </a>
+
+        @endif
+
       </div>
       <div class="flex flex-col gap-2 items-center bg-[#E3D8D8] rounded-xl">
           <a href="{{route('profile')}}"
               class="py-2 flex flex-col justify-center items-center gap-2">
-              <svg width="38" height="36" viewBox="0 0 47 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="38" height="36" viewBox="0 0 47 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M23.4999 0.333252C26.5093 0.333239 29.4893 0.893653 32.2697 1.9825C35.0501 3.07134 37.5764 4.66729 39.7045 6.67923C41.8325 8.69116 43.5205 11.0797 44.6722 13.7084C45.8239 16.3371 46.4166 19.1546 46.4166 21.9999C46.4166 33.9661 36.1564 43.6666 23.4999 43.6666C10.8434 43.6666 0.583252 33.9661 0.583252 21.9999C0.583252 10.0338 10.8434 0.333252 23.4999 0.333252ZM25.7916 24.1666H21.2083C15.5348 24.1666 10.6639 27.4153 8.56309 32.0527C11.8871 36.4596 17.3386 39.3333 23.4999 39.3333C29.6612 39.3333 35.1126 36.4596 38.4368 32.0524C36.3359 27.4153 31.4651 24.1666 25.7916 24.1666ZM23.4999 6.83325C19.7029 6.83325 16.6249 9.74343 16.6249 13.3333C16.6249 16.9231 19.7029 19.8333 23.4999 19.8333C27.2968 19.8333 30.3749 16.9231 30.3749 13.3333C30.3749 9.74343 27.2969 6.83325 23.4999 6.83325Z" fill="black"/>
-                  </svg>                    
-              <p class="text-[0.8rem] text-center mt-2">Profil</p>
+                </svg>                    
+              <p class="text-[0.8rem] text-center mt-2">Profile</p>
           </a>
       </div>
     </div>
 
-    <div class="flex flex-row items-center w-full gap-4 px-7">
+    <div class="flex flex-row items-center w-full gap-4 px-7 mt-3">
         <div class="h-full w-2/5 flex flex-row items-center justify-center">
             @if ($user->foto)
             <img src="{{ asset('storage/' . $user->foto) }}" alt="Foto Profil"
                 class="rounded-full h-full w-full object-cover">
             @else
-            <svg width="60" height="55" viewBox="0 0 60 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M30 30.9375C39.3164 30.9375 46.875 24.0088 46.875 15.4688C46.875 6.92871 39.3164 0 30 0C20.6836 0 13.125 6.92871 13.125 15.4688C13.125 24.0088 20.6836 30.9375 30 30.9375ZM45 34.375H38.543C35.9414 35.4707 33.0469 36.0938 30 36.0938C26.9531 36.0938 24.0703 35.4707 21.457 34.375H15C6.71484 34.375 0 40.5303 0 48.125V49.8438C0 52.6904 2.51953 55 5.625 55H54.375C57.4805 55 60 52.6904 60 49.8438V48.125C60 40.5303 53.2852 34.375 45 34.375Z"
-                    fill="#FF76CE" />
-            </svg>
+            <svg width="60" height="55" viewBox="0 0 47 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M23.4999 0.333252C26.5093 0.333239 29.4893 0.893653 32.2697 1.9825C35.0501 3.07134 37.5764 4.66729 39.7045 6.67923C41.8325 8.69116 43.5205 11.0797 44.6722 13.7084C45.8239 16.3371 46.4166 19.1546 46.4166 21.9999C46.4166 33.9661 36.1564 43.6666 23.4999 43.6666C10.8434 43.6666 0.583252 33.9661 0.583252 21.9999C0.583252 10.0338 10.8434 0.333252 23.4999 0.333252ZM25.7916 24.1666H21.2083C15.5348 24.1666 10.6639 27.4153 8.56309 32.0527C11.8871 36.4596 17.3386 39.3333 23.4999 39.3333C29.6612 39.3333 35.1126 36.4596 38.4368 32.0524C36.3359 27.4153 31.4651 24.1666 25.7916 24.1666ZM23.4999 6.83325C19.7029 6.83325 16.6249 9.74343 16.6249 13.3333C16.6249 16.9231 19.7029 19.8333 23.4999 19.8333C27.2968 19.8333 30.3749 16.9231 30.3749 13.3333C30.3749 9.74343 27.2969 6.83325 23.4999 6.83325Z" fill="#0BB4A6"/>
+              </svg>  
             @endif
         </div>
         <div class="flex flex-row justify-between items-center w-full">
@@ -104,12 +117,12 @@
             {{ $user->email }}
             <span class="text-xs font-normal text-slate-400">(Email)</span>
         </div>
-        <a href="#" class="flex flex-row font-semibold text-sm py-2 border-b-2" onclick="openPassword()">
+        <a href="#" class="flex flex-row font-medium justify-center items-center text-sm py-2 border-2 border-[#0BB4A6] mt-6 rounded-lg hover:bg-[#0BB4A6] hover:text-white" onclick="openPassword()">
             Ubah kata sandi
         </a>
-        <form method="POST" action="{{ route('logout') }}" onsubmit="resetPopupOnLogout()">
+        <form method="POST" action="{{ route('logout') }}" onsubmit="resetPopupOnLogout()" class="w-full">
             @csrf
-            <button type="submit" class="flex flex-row font-semibold text-sm py-2 w-full">
+            <button type="submit" class="w-full flex flex-row font-medium justify-center text-white items-center text-sm py-2.5 bg-[#0BB4A6] rounded-lg hover:bg-[#268880] mt-2">
                 Logout
             </button>
         </form>

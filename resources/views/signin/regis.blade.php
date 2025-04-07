@@ -11,7 +11,7 @@
         <!-- NIK -->
         <input id="nik" type="text" name="nik"
             class="px-3 py-3 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-black focus:ring-black block w-full rounded-md sm:text-sm focus:ring-1"
-            placeholder="NIK" value="{{ old('nik') }}" required>
+            placeholder="NIK (16 Angka)" value="{{ old('nik') }}" required>
         <x-input-error :messages="$errors->get('nik')" class="mt-2" />
         
         <!-- Nama -->    
@@ -59,7 +59,7 @@
         <!-- No. Telepon -->
         <input id="no_hp" type="text" name="no_hp"
             class="px-3 py-3 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-black focus:ring-black block w-full rounded-md sm:text-sm focus:ring-1"
-            placeholder="No. Telepon" value="{{ old('no_hp') }}" required>
+            placeholder="No. Telepon (min 10 angka)" value="{{ old('no_hp') }}" required>
         <x-input-error :messages="$errors->get('no_hp')" class="mt-2" />
 
         <!-- Email -->

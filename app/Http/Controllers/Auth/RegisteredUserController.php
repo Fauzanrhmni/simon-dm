@@ -53,13 +53,13 @@ class RegisteredUserController extends Controller
             'jenis_kelamin' => $request->jenis_kelamin,
             'no_hp' => $request->no_hp,
             'nik' => $request->nik,
+            'role' => 2, // Tambahkan ini
         ]);
         // dd($user);
 
         event(new Registered($user));
 
-        Auth::login($user);
+        return redirect(route('login'))->with('success', 'Registrasi berhasil! Silahkan hubungi admin untuk verifikasi login!');
 
-        return redirect(route('dashboard'));
     }
 }

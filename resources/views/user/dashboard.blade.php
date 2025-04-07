@@ -2,7 +2,7 @@
 @section('content')
 
 <section
-    class="h-[730px] w-[350px] m-auto overflow-hidden bg-slate-100 bg-cover bg-center rounded-3xl flex flex-col items-center container-snap overflow-y-auto scale-90">
+    class="h-[730px] w-[350px] m-auto overflow-hidden bg-slate-100 bg-cover bg-center rounded-3xl flex flex-col container-snap overflow-y-auto scale-90">
 
     <!-- Popup Modal Setelah Login -->
     <div id="popupModal" class="fixed inset-0 flex flex-col items-center justify-center bg-[#0BB4A6] z-50 p-4 text-center hidden">
@@ -32,67 +32,6 @@
         </form>          
     </div>
 
-    <!-- <div class="rounded-3xl h-[40%] w-full bg-[#FF76CE] p-6 flex flex-col items-center">
-        <div class="w-full">
-            <h1 class="text-lg text-start font-bold text-white">Halo, {{ $user->name }}</h1>
-            <h1 class="text-[0.7rem] w-fit px-3 py-1 text-start font-bold rounded-full mt-1 text-white
-                bg-{{ 
-                    $statusDiabetes == 'Waspada' ? 'yellow-500' : 
-                    ($statusDiabetes == 'Non Diabetes' ? 'green-500' : 
-                    ($statusDiabetes == 'Diabetes' ? 'red-500' : 'black'))
-                }}">
-                    {{ $statusDiabetes }}
-            </h1>
-        </div>
-        <div class="flex flex-row justify-between items-center gap-3 w-full px-2 h-full mt-6">
-            <div class="w-[80px] bg-red-500 text-white flex flex-col px-2 py-4 rounded-lg gap-2 h-full justify-between">
-                <img src="{{ asset('assets/gdt.svg') }}" alt="" class="h-6 w-9">
-                <h2 class="text-xs leading-tight">Gula <br>Darah <br>Terakhir</h2>
-                <div class="flex flex-col">
-                    <h1 class="text-yellow-300 font-bold text-center">{{ $catatanKesehatan->gula ?? 0 }}</h1>
-                    <h1 class="text-xs text-center">mg/dL</h1>
-                </div>
-            </div>
-            <div class="w-[80px] bg-[#FFF45C] text-black flex flex-col px-2 py-4 rounded-lg gap-2 h-full justify-between">
-                <img src="{{ asset('assets/td.svg') }}" alt="" class="h-6 w-6">
-                <h2 class="text-xs leading-tight">Tekanan <br>Darah</h2>
-                <div class="flex flex-col">
-                    <h1 class="text-red-500 font-bold text-center">{{ $catatanKesehatan->sistolik ?? 0 }}/{{ $catatanKesehatan->diastolik ?? '0' }}</h1>
-                    <h1 class="text-xs text-center">mmHg</h1>
-                </div>
-            </div>
-            <div class="w-[80px] bg-[#1782A3] text-white flex flex-col px-2 py-4 rounded-lg gap-2 h-full justify-between">
-                <img src="{{ asset('assets/imt.svg') }}" alt="" class="h-6 w-9">
-                <h2 class="w-full text-xs leading-tight">Index <br>Masa <br>Tubuh</h2>
-                <div class="flex flex-col">
-                    @php
-                        $imt = $catatanKesehatan && $catatanKesehatan->berat && $catatanKesehatan->tinggi 
-                            ? $catatanKesehatan->berat / (($catatanKesehatan->tinggi / 100) ** 2) 
-                            : 0;
-                            $keterangan = '';
-                        if ($imt < 18.5 && $imt >= 17) {
-                            $keterangan = 'Kurus';
-                        } elseif ($imt >= 18.5 && $imt <= 25) {
-                            $keterangan = 'Normal';
-                        } elseif ($imt > 25 && $imt <= 27) {
-                            $keterangan = 'Gemuk';
-                        } elseif ($imt > 27) {
-                            $keterangan = 'Obesitas';
-                        } else {
-                            $keterangan = 'None';
-                        }
-                    @endphp
-                    <h1 class="font-bold text-center">{{ number_format($imt, 2) }}</h1>
-                    <h1 class="text-xs text-center">{{ $keterangan }}</h1>
-                </div>
-            </div>
-            {{-- <h1 class="text-base font-bold text-white text-center mt-2">Grafik Gula Darah
-            </h1> --}}
-        </div>
-        
-
-    </div> -->
-
     <div class="grid grid-cols-3 mt-20 gap-x-2 w-full px-5">
         <div class="flex flex-col gap-2 items-center bg-[#E3D8D8] rounded-xl">
             <a href="{{ route('dashboard') }}"
@@ -121,12 +60,63 @@
                 <svg width="38" height="36" viewBox="0 0 47 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M23.4999 0.333252C26.5093 0.333239 29.4893 0.893653 32.2697 1.9825C35.0501 3.07134 37.5764 4.66729 39.7045 6.67923C41.8325 8.69116 43.5205 11.0797 44.6722 13.7084C45.8239 16.3371 46.4166 19.1546 46.4166 21.9999C46.4166 33.9661 36.1564 43.6666 23.4999 43.6666C10.8434 43.6666 0.583252 33.9661 0.583252 21.9999C0.583252 10.0338 10.8434 0.333252 23.4999 0.333252ZM25.7916 24.1666H21.2083C15.5348 24.1666 10.6639 27.4153 8.56309 32.0527C11.8871 36.4596 17.3386 39.3333 23.4999 39.3333C29.6612 39.3333 35.1126 36.4596 38.4368 32.0524C36.3359 27.4153 31.4651 24.1666 25.7916 24.1666ZM23.4999 6.83325C19.7029 6.83325 16.6249 9.74343 16.6249 13.3333C16.6249 16.9231 19.7029 19.8333 23.4999 19.8333C27.2968 19.8333 30.3749 16.9231 30.3749 13.3333C30.3749 9.74343 27.2969 6.83325 23.4999 6.83325Z" fill="black"/>
                     </svg>                    
-                <p class="text-[0.8rem] text-center mt-2">Profil</p>
+                <p class="text-[0.8rem] text-center mt-2">Profile</p>
             </a>
         </div>
     </div>
 
-    <h1 class="font-semibold mt-3 text-sm">{{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</h1>
+    <h1 class="font-semibold mt-3 text-sm text-center">{{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</h1>
+
+    <div class="flex flex-row items-center gap-1.5 px-5 mt-2">
+        <div class="h-3 w-3 rounded-full
+        bg-{{ 
+            $statusDiabetes == 'Waspada' ? 'yellow-500' : 
+            ($statusDiabetes == 'Non Diabetes' ? 'green-500' : 
+            ($statusDiabetes == 'Diabetes' ? 'red-500' : 'black'))
+        }}"></div>
+        <h1 class="text-start text-sm font-semibold
+        text-{{ 
+            $statusDiabetes == 'Waspada' ? 'yellow-500' : 
+            ($statusDiabetes == 'Non Diabetes' ? 'green-500' : 
+            ($statusDiabetes == 'Diabetes' ? 'red-500' : 'black'))
+        }}">{{ $statusDiabetes }}</h1>
+    </div>
+
+    <div class="flex flex-row items-center gap-1.5 px-[38px] mt-0.5">
+        <div class="flex flex-col">
+            <h2 class="text-xs">Gula Darah</h2>
+            <h2 class="text-xs">Sis/Dias</h2>
+            <h2 class="text-xs">IMT</h2>
+        </div>
+        <div class="flex flex-col">
+            <h2 class="text-xs">:</h2>
+            <h2 class="text-xs">:</h2>
+            <h2 class="text-xs">:</h2>
+        </div>
+        <div class="flex flex-col">
+            <h2 class="text-xs">{{ $catatanKesehatan->gula ?? 0 }} mg/dL</h2>
+            <h2 class="text-xs">{{ $catatanKesehatan->sistolik ?? 0 }}/{{ $catatanKesehatan->diastolik ?? '0' }} mmHg</h2>
+            @php
+                $imt = $catatanKesehatan && $catatanKesehatan->berat && $catatanKesehatan->tinggi 
+                    ? $catatanKesehatan->berat / (($catatanKesehatan->tinggi / 100) ** 2) 
+                    : 0;
+                    $keterangan = '';
+                if ($imt < 18.5 && $imt >= 17) {
+                    $keterangan = 'Kurus';
+                } elseif ($imt >= 18.5 && $imt <= 25) {
+                    $keterangan = 'Normal';
+                } elseif ($imt > 25 && $imt <= 27) {
+                    $keterangan = 'Gemuk';
+                } elseif ($imt > 27) {
+                    $keterangan = 'Obesitas';
+                } else {
+                    $keterangan = 'None';
+                }
+            @endphp
+            <h2 class="text-xs">{{ number_format($imt, 2) }} ({{ $keterangan }})</h2>
+        </div>
+    </div>
+
 
     <div class="grid grid-cols-3 grid-rows-2 gap-y-4 gap-x-2 mt-5 w-full p-5 bg-[#0BB4A6] rounded-2xl">
         <!-- Pengingat Obat -->

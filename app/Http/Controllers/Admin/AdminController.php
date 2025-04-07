@@ -14,24 +14,52 @@ class AdminController extends Controller
 {
     public function index(Request $request)
     {
-        // $query = $request->input('search');
-
-        // $users = User::where('role', 0)
-        //     ->when($query, function ($queryBuilder) use ($query) {
-        //         $queryBuilder->where('name', 'like', "%$query%");
-        //     })
-        //     ->get()
-        //     ->map(function ($user) {
-        //         $user->umur = Carbon::parse($user->tanggal_lahir)->age;
-        //         $user->nama_singkat = Str::limit($user->name, 6, '..');
-        //         $user->alamat_singkat = Str::limit($user->alamat, 8, '..');
-        //         return $user;
-        //     });
-
         $petugas = Auth::user();
 
         return view('admin.admin', compact('petugas'));
     }
+
+    public function listUsers()
+    {
+        $users = User::select('id', 'name', 'role', 'tanggal_lahir')
+                     ->where('role', '!=', 1) // Sembunyikan admin
+                     ->get();
+
+        foreach ($users as $user) {
+            // Ambil catatan kesehatan terbaru user
+            $catatanKesehatan = CatatanKesehatan::where('user_id', $user->id)->latest()->first();
+            $gulaDarah = $catatanKesehatan ? $catatanKesehatan->gula : null;
+    
+            // Tentukan status diabetes
+            if ($gulaDarah === null) {
+                $user->statusDiabetes = 'Data Gula Tidak Tersedia';
+            } elseif ($gulaDarah < 140) {
+                $user->statusDiabetes = 'Non Diabetes';
+            } elseif ($gulaDarah < 200) {
+                $user->statusDiabetes = 'Waspada';
+            } else {
+                $user->statusDiabetes = 'Diabetes';
+            }
+        }
+
+        return view('admin.users', compact('users'));
+    }
+    
+    
+    public function updateUserRole($id, Request $request)
+    {
+        $user = User::findOrFail($id);
+
+        if ($request->role == 0) {
+            $user->role = 0; // Set role ke user (terverifikasi)
+            $user->save();
+            return response()->json(['success' => true, 'message' => 'User berhasil diverifikasi.']);
+        }
+
+        return response()->json(['success' => false, 'message' => 'Aksi tidak valid.']);
+    }
+
+
 
     // public function show($id)
     // {

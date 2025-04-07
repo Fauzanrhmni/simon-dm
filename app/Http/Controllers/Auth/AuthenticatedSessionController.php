@@ -28,6 +28,14 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        $authUser = Auth::user();
+
+        // Cek apakah user belum diverifikasi (role = 2)
+        if ($authUser->role == 2) {
+            Auth::logout();
+            return redirect()->route('login')->with('error', 'Anda belum bisa login, hubungi admin untuk verifikasi.');
+        }
+
         $authUserRole=Auth::user()->role;
         if($authUserRole== 1 ){
             return redirect()->intended(route('admin', absolute: false));
