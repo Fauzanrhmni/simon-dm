@@ -11,7 +11,6 @@ class StokObat extends Model
 
     protected $fillable = [
         'nama_obat',
-        'stok',
         'jenis_obat',
         'takaran'
     ];

@@ -23,8 +23,7 @@ class DataPasienController extends Controller
             ->get()
             ->map(function ($user) {
                 $user->umur = Carbon::parse($user->tanggal_lahir)->age;
-                $user->nama_singkat = Str::limit($user->name, 6, '..');
-                $user->alamat_singkat = Str::limit($user->alamat, 8, '..');
+                $user->catatanKesehatan = CatatanKesehatan::where('user_id', $user->id)->latest()->first();
                 return $user;
             });
 
@@ -36,10 +35,31 @@ class DataPasienController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
+    
+        // Catatan terbaru
         $catatanKesehatan = CatatanKesehatan::where('user_id', $id)
             ->latest()
             ->first();
-
-        return view('admin.detail', compact('user', 'catatanKesehatan'));
+    
+        // Semua riwayat catatan kesehatan
+        $riwayatCatatan = CatatanKesehatan::where('user_id', $id)
+            ->orderBy('created_at', 'desc')
+            ->get();
+    
+        return view('admin.detail', compact('user', 'catatanKesehatan', 'riwayatCatatan'));
     }
+
+
+    // Di controller admin
+    public function riwayat($userId)
+    {
+        $user = User::findOrFail($userId);
+    
+        $catatanKesehatan = CatatanKesehatan::where('user_id', $user->id)
+            ->orderBy('created_at', 'desc')
+            ->get();
+    
+        return view('admin.riwayat-kesehatan', compact('user', 'catatanKesehatan'));
+    }
+
 }

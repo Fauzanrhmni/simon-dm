@@ -37,6 +37,10 @@
 
     @livewireStyles
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/b5684de0c6.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="w-[100wh] h-screen bg-slate-200 sm:w-full flex justify-center items-center">

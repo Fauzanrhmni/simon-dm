@@ -41,7 +41,30 @@ class RegisteredUserController extends Controller
             'jenis_kelamin' => ['required', 'in:Pria,Wanita'],
             'no_hp' => ['required', 'string', 'max:15', 'min:10'], // Tambah validasi min
             'nik' => ['required', 'string', 'size:16', 'unique:users,nik'],
+        ],[
+            'name.required' => 'Nama tidak boleh kosong.',
+            'email.required' => 'Email tidak boleh kosong.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email sudah digunakan.',
+            'password.required' => 'Password tidak boleh kosong.',
+            'password.min' => 'Password minimal 8 karakter.',
+            'password.confirmed' => 'Konfirmasi password tidak cocok.',
+            'alamat.required' => 'Alamat tidak boleh kosong.',
+            'tinggi_badan.required' => 'Tinggi badan tidak boleh kosong.',
+            'tinggi_badan.numeric' => 'Tinggi badan harus berupa angka.',
+            'berat_badan.required' => 'Berat badan tidak boleh kosong.',
+            'berat_badan.numeric' => 'Berat badan harus berupa angka.',
+            'tanggal_lahir.required' => 'Tanggal lahir tidak boleh kosong.',
+            'tanggal_lahir.date' => 'Tanggal lahir tidak valid.',
+            'jenis_kelamin.required' => 'Jenis kelamin wajib dipilih.',
+            'jenis_kelamin.in' => 'Jenis kelamin tidak valid.',
+            'no_hp.required' => 'Nomor HP tidak boleh kosong.',
+            'no_hp.min' => 'Nomor HP minimal 10 digit.',
+            'nik.required' => 'NIK tidak boleh kosong.',
+            'nik.size' => 'NIK harus 16 digit.',
+            'nik.unique' => 'NIK sudah terdaftar.',
         ]);
+        
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,

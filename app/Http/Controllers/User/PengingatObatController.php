@@ -33,7 +33,7 @@ class PengingatObatController extends Controller
     {
         $request->validate([
             'obat' => 'required|string|max:255',
-            'kategori' => 'required|in:Sebelum Makan,Sesudah Makan,Sebelum Tidur',
+            'kategori' => 'required|in:Sebelum Makan,Sesudah Makan,Saat Makan',
             'jml_obat' => 'required|integer|min:1',
             'jenis_obat' => 'required|string|max:255',
             'tanggal' => 'required|date',
